@@ -1,0 +1,72 @@
+@import "../../scss/base.scss";
+
+.sidebar {
+    z-index: 15;
+    width: fit-content;
+    position: fixed;
+    height: 100vh;
+    overflow: hidden;
+    overflow-anchor: none;
+    touch-action: auto;
+    top: $header-height;
+    overflow-y: scroll;    
+
+    .sidebar-container {
+        padding: 2px 1.5rem 4.5rem;
+        width: 280px;
+
+        .nav-item {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+
+            .group-title {
+                width: 100%;                
+                text-transform: uppercase;
+                font-size: .8rem;
+                margin: .75rem 0;
+                font-weight: 700;
+                color: #545cd8;
+            }
+
+            .accordion {
+                width: 100%;
+
+                .title-holder {
+                    @extend %valign;
+                    justify-content: center;
+                    padding-left: 15px;
+                    
+                    & > div {
+                        @extend %valign;
+                        justify-content: center;
+                        width: 34px;
+                        height: 34px;
+
+                        i {
+                            font-size: 26px;
+                            margin-right: 15px;
+                        }   
+                    }                    
+                }
+                
+                .panel-data-holder {
+                    display: flex;
+                    flex-direction: column;
+
+                    div {
+                        margin-top: 10px;
+                        margin-left: 34px;
+                        cursor: pointer;
+                        border-radius: .25rem;
+                        padding: 7px 14px;
+
+                        &:hover {
+                            background: #e0f3ff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

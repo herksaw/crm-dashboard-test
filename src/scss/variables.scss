@@ -1,0 +1,16 @@
+%valign {
+    display: flex;
+    align-items: center;
+}
+
+%chevron {
+    margin-top: 1px;
+    margin-left: .5rem;
+    opacity: 0.5;
+    width: 8px;
+    height: auto;  
+}
+
+$primary-text-color: white;
+$header-height: 60px;
+$sidebar-width: 350px;

@@ -1,0 +1,12 @@
+@import "../fonts/fonts.scss";
+@import "../fonts/icons.scss";
+@import "./variables.scss";
+
+p, span, div {
+    color: #495057;
+}
+
+p, span, img {
+    user-select: none;
+    pointer-events: none;
+}

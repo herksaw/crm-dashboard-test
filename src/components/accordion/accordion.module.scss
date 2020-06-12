@@ -1,0 +1,41 @@
+@import "../../scss/base.scss";
+
+.accordion {
+    margin-bottom: 10px;
+
+    .title {        
+        @extend %valign;
+        justify-content: space-between;
+        cursor: pointer;        
+        border-radius: .25rem;
+        padding: 2px 0;
+
+        &:hover {
+            background: #e0f3ff;
+        }        
+
+        img {
+            @extend %chevron;
+            transform: rotateX(180deg);
+            transition: transform 0.5s;
+            margin-right: 25px;
+        }
+    }
+
+    .panel {
+        overflow: hidden;
+        opacity: 0;
+        margin-top: -100%;
+        animation: popin 0.5s linear;
+    }
+}
+
+@keyframes popin {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

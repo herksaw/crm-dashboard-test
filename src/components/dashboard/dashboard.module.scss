@@ -1,0 +1,50 @@
+@import "../../scss/base.scss";
+
+.dashboard {
+    position: fixed;
+    left: $sidebar-width;
+    top: $header-height;
+    width: calc(98% - #{$sidebar-width});
+    height: calc(100% - #{$header-height});
+    padding: 1% 1%;
+    overflow-y: scroll;
+
+    .summary-tabs-container {
+        @extend %valign;
+        margin-bottom: 15px;
+
+        .summary-tab {
+            width: calc(100% / 3);
+
+            &:nth-child(2n) {
+                margin: 0 30px 1rem;
+            }
+        }
+    }
+
+    .sales-bandwidth-holder {
+        display: flex;
+
+        .sales-report {
+            width: 40%;
+        }
+    
+        .bandwidth-report {
+            width: 60%;
+            margin-left: 30px;
+        }
+    }
+
+    .wave-holder {
+        display: flex;
+        margin-bottom: 50px;
+
+        & > :nth-child(2n) {
+            margin: 0 15px;
+        }
+
+        .wave-chart {
+            width: calc(100% / 3);
+        }
+    }
+}

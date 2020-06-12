@@ -1,0 +1,39 @@
+@import "../../scss/base.scss";
+
+$chart-offset: 70px;
+
+.waveChart {
+    .data-group {
+        .chart-holder {
+            box-shadow: 0 0.46875rem 2.1875rem rgba(8,10,37,.03), 0 0.9375rem 1.40625rem rgba(8,10,37,.03), 0 0.25rem 0.53125rem rgba(8,10,37,.05), 0 0.125rem 0.1875rem rgba(8,10,37,.03);
+            border-width: 0;
+            border-radius: .25rem;
+            margin-top: 25px;
+            padding: 15px;
+            position: relative;
+            height: 250px;
+
+            & > :nth-child(1) {
+                font-weight: 500;
+                font-size: 1.25rem;
+            }
+
+            img {
+                width: 100%;
+                height: 88%;
+                object-fit: cover;
+            }
+
+            .chart-data {
+                @extend %valign;
+                position: absolute;
+                top: $chart-offset;
+
+                span {
+                    font-weight: 400;
+                    font-size: 2.5rem;
+                }
+            }
+        }
+    }
+}

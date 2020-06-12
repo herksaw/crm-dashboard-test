@@ -1,0 +1,26 @@
+@import "../../scss/base.scss";
+
+.profileCol {
+    @extend %valign;
+    cursor: pointer;
+
+    img {
+        width: 42px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+
+        :nth-child(1) {
+            opacity: .8;
+            font-weight: 700;
+        }
+
+        :nth-child(2) {
+            opacity: .5;
+        }
+    }
+}

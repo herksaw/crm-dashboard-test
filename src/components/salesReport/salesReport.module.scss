@@ -1,0 +1,170 @@
+@import "../../scss/base.scss";
+
+$chart-offset: 45px;
+
+.salesReport {
+    box-shadow: 0 0.46875rem 2.1875rem rgba(8,10,37,.03), 0 0.9375rem 1.40625rem rgba(8,10,37,.03), 0 0.25rem 0.53125rem rgba(8,10,37,.05), 0 0.125rem 0.1875rem rgba(8,10,37,.03);
+    border-width: 0;
+    min-width: 0;
+    border: 1px solid rgba(32,39,140,.125);
+    border-radius: .25rem;
+    padding: 10px 15px 15px;
+
+    .header {
+        @extend %valign;
+        justify-content: space-between;
+        position: relative;
+
+        .left-group {
+            @extend %valign;
+
+            i {
+                font-size: 26px;
+                color: #ff0844;
+                margin-right: 10px;
+            }
+
+            span {
+                text-transform: uppercase;
+                color: rgba(18,21,78,.7);
+                font-weight: 700;
+                font-size: .88rem;
+            }
+        }
+
+        .right-group {
+            @extend %valign;
+
+            div {
+                margin-left: 30px;
+                position: relative;
+
+                &:hover {
+                    color: #545cd8;
+
+                    div {
+                        width: 100%;
+                    }
+                }
+
+                div {
+                    position: absolute;
+                    content: "";
+                    background: #545cd8;
+                    height: 5px;
+                    width: 0%;
+                    bottom: -17px;
+                    right: 0;
+                    border-radius: .25rem;
+                    z-index: 1;
+                    transition: width 0.2s;
+                }
+            }
+        }
+
+        &:after {
+            position: absolute;
+            content: "";
+            background: #dee2e6;
+            height: 1px;
+            width: 100%;
+            bottom: -6px;
+        }
+    }
+
+    .data-group {
+        .chart-holder {
+            box-shadow: 0 0.46875rem 2.1875rem rgba(8,10,37,.03), 0 0.9375rem 1.40625rem rgba(8,10,37,.03), 0 0.25rem 0.53125rem rgba(8,10,37,.05), 0 0.125rem 0.1875rem rgba(8,10,37,.03);
+            border-width: 0;
+            border-radius: .25rem;
+            margin-top: 25px;
+            padding: 15px;
+            position: relative;
+            height: 250px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .chart-data {
+                @extend %valign;
+                position: absolute;
+                top: $chart-offset;     
+
+                :nth-child(1) {
+                    font-size: 32px;
+                    opacity: 0.5;
+                    margin-right: 4px;
+                }
+
+                :nth-child(2) {
+                    font-size: 40px;
+                    transform: translateY(-4px);
+                }
+
+                :nth-child(3) {
+                    color: #6c757d;
+                    opacity: 0.5;
+                    font-size: 18px;
+                    transform: translateY(5px);
+                    margin-left: 8px;
+                }
+            }
+        }
+
+        .list-title {
+            opacity: .5;
+            color: #6c757d;
+            font-weight: 400;
+            text-transform: uppercase;
+            margin: 25px 0 15px;
+        }
+
+        .list-holder {
+            height: 200px;
+            overflow-y: scroll;
+            padding-right: 10px;
+
+            .list-item {
+                @extend %valign;
+                justify-content: space-between;
+                margin-bottom: 15px;
+
+                .trend-holder {
+                    @extend %valign;
+
+                    :nth-child(1) {
+                        opacity: .5;
+                        font-size: 20px;
+                        margin-right: 4px;
+                    }
+
+                    :nth-child(2) {
+                        font-size: 26px;
+                        color: #6c757d;
+                        transform: translateY(-3px);
+                    }
+
+                    img {
+                        width: 12px;
+                        margin-left: 8px;
+                    }
+
+                    .trend-up {
+                        filter: invert(69%) sepia(14%) saturate(1757%) hue-rotate(96deg) brightness(91%) contrast(89%);
+                    }
+    
+                    .trend-down {
+                        filter: invert(21%) sepia(56%) saturate(4040%) hue-rotate(331deg) brightness(91%) contrast(91%);
+                    }
+    
+                    .trend-same {
+                        filter: invert(75%) sepia(37%) saturate(936%) hue-rotate(352deg) brightness(99%) contrast(95%);
+                    }
+                }                
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+@import "../../scss/base.scss";
+
+.summaryTab {
+    @extend %valign;
+    justify-content: space-between;
+    box-shadow: 0 0.46875rem 2.1875rem rgba(8,10,37,.03), 0 0.9375rem 1.40625rem rgba(8,10,37,.03), 0 0.25rem 0.53125rem rgba(8,10,37,.05), 0 0.125rem 0.1875rem rgba(8,10,37,.03);
+    border-width: 0;
+    margin-bottom: 1rem;
+    border-radius: .25rem;
+    padding: 15px;
+
+    p, span {
+        color: $primary-text-color;
+    }
+
+    .left-group {
+        display: flex;
+        flex-direction: column;
+
+        :nth-child(1) {
+            opacity: .8;
+            font-weight: 700;
+        }
+
+        :nth-child(2) {
+            opacity: .5;
+        }
+    }
+
+    .data {
+        font-weight: 700;
+        font-size: 1.8em;
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+}
